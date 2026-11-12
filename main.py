@@ -17,6 +17,7 @@ from routes.search import router as search_router
 from routes.block import router as block_router
 from routes.admin import router as admin_router
 
+
 app = FastAPI(
     title="Nexus Gaming Platform API",
     description="Full Social + Gaming + Tournament Backend",
