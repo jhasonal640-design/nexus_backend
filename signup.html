@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  .fade-out {
+    animation: fadeOut 0.4s ease forwards;
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(0.98); }
+  }
+</style>
+
+  <title>Signup</title>
+  <link rel="stylesheet" href="auth.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <div class="auth-container">
+    <div class="auth-card">
+
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Join the platform</p>
+
+      <input id="signup_username" class="auth-input" placeholder="Username">
+      <input id="signup_password" class="auth-input" placeholder="Password" type="password">
+
+      <button class="auth-btn" onclick="signup()">Signup</button>
+
+      <p class="auth-switch">
+         Already have an account? <a href="#" onclick="goTo('login.html')">Login</a>
+      </p>
+
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="loader" class="loader" style="display:none;"></div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
