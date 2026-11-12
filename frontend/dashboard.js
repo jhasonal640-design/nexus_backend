@@ -1,4 +1,4 @@
-const BASE_URL = "https://nexusbackend-production-9509.up.railway.app";
+const BASE_URL = "http://127.0.0.1:8000";
 
 /* -------------------------------------------------
    TOAST NOTIFICATION
