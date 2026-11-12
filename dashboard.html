@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h3 class="side-title">Menu</h3>
+    <button class="side-link" onclick="scrollToBox('profile')">Profile</button>
+    <button class="side-link" onclick="scrollToBox('leaderboard')">Leaderboard</button>
+    <button class="side-link" onclick="scrollToBox('matches')">Matches</button>
+    <button class="side-link" onclick="scrollToBox('friends')">Friends</button>
+    <button class="side-link" onclick="scrollToBox('chat')">Chat</button>
+    <button class="side-link" onclick="scrollToBox('notifications')">Notifications</button>
+    <button class="side-link" onclick="scrollToBox('tournaments')">Tournaments</button>
+    <button class="side-link" onclick="scrollToBox('badges')">Badges</button>
+    <button class="side-link" onclick="scrollToBox('activity')">Activity</button>
+    <button class="side-link" onclick="scrollToBox('search')">Search</button>
+    <button class="side-link" onclick="scrollToBox('blocked')">Blocked</button>
+    <button class="side-link logout" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="container">
+
+    <!-- DARK MODE -->
+    <div class="top-bar">
+      <button class="toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </div>
+
+    <!-- HEADER -->
+    <img src="assets/logo.png" class="logo">
+    <h1 class="title">Dashboard</h1>
+    <h2 id="welcome_text" class="subtitle"></h2>
+
+    <!-- PROFILE -->
+    <div class="box" id="profile">
+      <button class="btn" onclick="getProfile()">Load Profile</button>
+      <pre id="profile_output" class="output"></pre>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div class="box" id="leaderboard">
+      <button class="btn" onclick="getLeaderboard()">Leaderboard</button>
+      <div id="leaderboard_output"></div>
+    </div>
+
+    <!-- MATCHES -->
+    <div class="box" id="matches">
+      <input id="match_score" class="input" placeholder="Score">
+      <input id="match_result" class="input" placeholder="win/lose">
+      <button class="btn" onclick="addMatch()">Add Match</button>
+      <button class="btn" onclick="getMatches()">Match History</button>
+      <pre id="matches_output" class="output"></pre>
+    </div>
+
+    <!-- FRIENDS -->
+    <div class="box" id="friends">
+      <input id="friend_name" class="input" placeholder="Friend username">
+      <button class="btn" onclick="sendFriendRequest()">Send Friend Request</button>
+      <button class="btn" onclick="getFriendRequests()">Friend Requests</button>
+      <button class="btn" onclick="getFriends()">Friends</button>
+      <pre id="friend_requests_output" class="output"></pre>
+      <pre id="friends_output" class="output"></pre>
+    </div>
+
+    <!-- CHAT -->
+    <div class="box" id="chat">
+      <input id="chat_to" class="input" placeholder="Chat with username">
+      <input id="chat_msg" class="input" placeholder="Message">
+      <button class="btn" onclick="sendChat()">Send Chat</button>
+      <button class="btn" onclick="getChat()">Load Chat</button>
+      <pre id="chat_output" class="output"></pre>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="box" id="notifications">
+      <button class="btn" onclick="getNotifications()">Notifications</button>
+      <pre id="notifications_output" class="output"></pre>
+    </div>
+
+    <!-- TOURNAMENTS -->
+    <div class="box" id="tournaments">
+      <button class="btn" onclick="getTournaments()">Tournaments</button>
+      <button class="btn" onclick="joinTournament()">Join Tournament</button>
+      <pre id="tournaments_output" class="output"></pre>
+    </div>
+
+    <!-- BADGES -->
+    <div class="box" id="badges">
+      <button class="btn" onclick="getBadges()">Badges</button>
+      <pre id="badges_output" class="output"></pre>
+    </div>
+
+    <!-- ACTIVITY -->
+    <div class="box" id="activity">
+      <button class="btn" onclick="getActivity()">Activity</button>
+      <pre id="activity_output" class="output"></pre>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="box" id="search">
+      <input id="search_user" class="input" placeholder="Search username">
+      <button class="btn" onclick="searchUser()">Search</button>
+      <pre id="search_output" class="output"></pre>
+    </div>
+
+    <!-- BLOCK -->
+    <div class="box" id="blocked">
+      <input id="block_user" class="input" placeholder="Block username">
+      <button class="btn" onclick="blockUser()">Block</button>
+      <button class="btn" onclick="getBlocked()">Blocked Users</button>
+      <pre id="blocked_output" class="output"></pre>
+    </div>
+
+    <!-- LOGOUT -->
+    <div class="box">
+      <button class="btn logout" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- TOAST + LOADER -->
+    <div id="toast" class="toast"></div>
+    <div id="loader" class="loader" style="display:none;"></div>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
